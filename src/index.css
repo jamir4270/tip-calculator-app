@@ -1,16 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Space Mono", monospace, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: 700;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: hsl(185, 41%, 84%);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --background-color: hsl(185, 41%, 84%);
+  --primary-color: hsl(183, 100%, 15%);
+  --secondary-color: hsl(172, 67%, 45%);
+  --reset-button-color: hsl(172, 67%, 45%);
+  --label-color: hsl(186, 14%, 43%);
+  --sub-label-color: hsl(185, 41%, 84%);
+  --card-background-color: hsl(0, 100%, 100%);
+  --input-field-color: hsl(185, 41%, 84%);
 }
 
 a {
