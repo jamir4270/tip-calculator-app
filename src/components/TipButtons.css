@@ -1,0 +1,14 @@
+.tip {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  align-self: flex-start;
+}
+
+.tip-input {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

@@ -1,3 +1,5 @@
+import "./NumOfPeopleInput.css";
+
 type NumOfPeopleProps = {
   value: string;
   onChange: (newValue: string) => void;

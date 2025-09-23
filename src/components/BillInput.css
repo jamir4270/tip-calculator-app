@@ -1,0 +1,8 @@
+.bill-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.bill-label {
+  align-self: flex-start;
+}
