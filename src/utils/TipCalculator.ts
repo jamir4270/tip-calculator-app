@@ -5,6 +5,7 @@ export default function TipCalculator(
 ) {
   const totalTip = bill * (tip / 100);
   const tipPerPerson = totalTip / numOfPeople;
+  const totalPerPerson = (bill + totalTip) / numOfPeople;
 
-  return { totalTip, tipPerPerson };
+  return { tipPerPerson, totalPerPerson };
 }
