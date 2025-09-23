@@ -31,8 +31,8 @@ function App() {
     newTotalPerPerson: number,
     newTipPerPerson: number
   ) {
-    const newTip = newTipPerPerson.toString();
-    const newTotal = newTotalPerPerson.toString();
+    const newTip = newTipPerPerson.toFixed(2);
+    const newTotal = newTotalPerPerson.toFixed(2);
     setTipDescription({
       tipPerPerson: newTip,
       totalPerPerson: newTotal,
