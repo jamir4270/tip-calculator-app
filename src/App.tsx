@@ -1,9 +1,11 @@
 import logo from "/frontend_mentor_resources/images/logo.svg";
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BillInput from "./components/BillInput";
 import TipButtons from "./components/TipButtons";
 import NumOfPeopleInput from "./components/NumOfPeopleInput";
+import TipCalculator from "./utils/TipCalculator";
+import TipDescription from "./components/TipDescription";
 
 function App() {
   const [bill, setBill] = useState("");
@@ -11,6 +13,31 @@ function App() {
   const tipValues = ["5", "10", "15", "25", "50"];
   const [selectedTip, setSelectedTip] = useState("");
   const [numOfPeople, setNumOfPeople] = useState("0");
+  const [tipDescription, setTipDescription] = useState({
+    tipPerPerson: "",
+    totalPerPerson: "",
+  });
+
+  useEffect(() => {
+    const billVal = parseFloat(bill);
+    const tipVal = parseFloat(selectedTip);
+    const totalNumOfPeople = parseInt(numOfPeople);
+
+    const tips = TipCalculator(billVal, tipVal, totalNumOfPeople);
+    handleTipDescription(tips.totalPerPerson, tips.tipPerPerson);
+  }, [bill, selectedTip, numOfPeople]);
+
+  function handleTipDescription(
+    newTotalPerPerson: number,
+    newTipPerPerson: number
+  ) {
+    const newTip = newTipPerPerson.toString();
+    const newTotal = newTotalPerPerson.toString();
+    setTipDescription({
+      tipPerPerson: newTip,
+      totalPerPerson: newTotal,
+    });
+  }
 
   function handleNumOfPeople(newValue: string) {
     if (isValidValue(newValue)) {
@@ -47,7 +74,12 @@ function App() {
           <p>{selectedTip}</p>
           <p>{numOfPeople}</p>
         </div>
-        <div className="result"></div>
+        <div className="result">
+          <TipDescription
+            tipPerPerson={tipDescription.tipPerPerson}
+            totalPerPerson={tipDescription.totalPerPerson}
+          />
+        </div>
       </div>
     </div>
   );
