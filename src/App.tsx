@@ -40,7 +40,7 @@ function App() {
   }
 
   function handleNumOfPeople(newValue: string) {
-    if (isValidValue(newValue)) {
+    if (isValidNumOfPeople(newValue)) {
       setNumOfPeople(newValue);
     }
   }
@@ -51,6 +51,11 @@ function App() {
 
   function isValidValue(value: string) {
     const regex = /^\d*\.?\d*$/;
+    return regex.test(value);
+  }
+
+  function isValidNumOfPeople(value: string) {
+    const regex = /^$|^[1-9]\d*$/;
     return regex.test(value);
   }
 
