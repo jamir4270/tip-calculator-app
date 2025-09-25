@@ -27,11 +27,17 @@ export default function TipButtons({ tipValues, onSelect }: TipButtonProps) {
       <label htmlFor="tip">Select Tip %</label>
       <div className="tip-input">
         {tipValues.map((tipVal) => (
-          <button key={tipVal} onClick={() => onSelect(tipVal)}>
+          <button
+            key={tipVal}
+            onClick={() => {
+              handleTip("");
+              onSelect(tipVal);
+            }}
+          >
             {tipVal}%
           </button>
         ))}
-        <TipInput value={tip} onChange={handleTip}/>
+        <TipInput value={tip} onChange={handleTip} />
       </div>
     </div>
   );
