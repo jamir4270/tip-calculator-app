@@ -31,7 +31,7 @@ export default function TipButtons({ tipValues, onSelect }: TipButtonProps) {
             {tipVal}%
           </button>
         ))}
-        <TipInput value={tip} onChange={handleTip} />
+        <TipInput value={tip} onChange={handleTip}/>
       </div>
     </div>
   );

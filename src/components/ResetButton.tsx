@@ -1,3 +1,5 @@
+import "./ResetButton.css";
+
 type ResetButtonProp = {
   onClick: () => void;
 };

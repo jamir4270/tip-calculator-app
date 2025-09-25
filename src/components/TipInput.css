@@ -1,1 +1,8 @@
-
+.tip-1 {
+    width: 105px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    background-color: #1a1a1a;
+    padding: 1px;
+}

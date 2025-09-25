@@ -1,6 +1,7 @@
 .tip {
   display: flex;
   flex-direction: column;
+  gap: 15px;
 }
 
 label {
@@ -11,4 +12,10 @@ label {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+button {
+  width: 110px;
+  margin-bottom: 15px;
 }
